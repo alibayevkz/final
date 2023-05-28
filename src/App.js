@@ -1,4 +1,4 @@
-// Import components
+
 import Navbar from "./components/Navbar";
 import NavItem from "./components/Navbar/NavItem";
 import Logo from "./components/Navbar/Logo";
@@ -6,7 +6,7 @@ import About from "./components/About";
 import HeroDetails from "./components/HeroDetails";
 import Home from "./components/Home";
 
-// Import dependencies
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {

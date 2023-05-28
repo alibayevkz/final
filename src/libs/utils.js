@@ -1,4 +1,3 @@
-// let md5 = require("md5");
 import MD5 from "crypto-js/md5";
 
 const getHash = (ts, privateKey, publicKey) => {
