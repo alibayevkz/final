@@ -5,7 +5,7 @@ const getHash = (ts, privateKey, publicKey) => {
   return MD5(ts + privateKey + publicKey).toString();
 };
 
-let API_URL = process.env.REACT_APP_BASE_URL;
+let API_URL = process.env.REACT_APP_BASIC_URL;
 
 const fetchHeros = async (name) => {
   let heroUrl = `${API_URL}/v1/public/characters`;
