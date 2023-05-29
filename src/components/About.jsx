@@ -1,4 +1,3 @@
-// HeroesComponent.jsx
 import React, { useState } from "react";
 import "../components/HeroesComponent.css";
 
@@ -18,7 +17,7 @@ export default function HeroesComponent() {
 
   const renderHeroes = () => {
     return heroes.map((hero, index) => (
-      <div key={index}>
+      <div className="hero_card" key={index}>
         <span>{hero.name}</span>
         <button onClick={() => removeHero(index)}>Remove</button>
       </div>
@@ -43,7 +42,9 @@ export default function HeroesComponent() {
         />
         <button onClick={addHero}>Add Hero</button>
       </div>
-      {renderHeroes()}
+      <div className="cards-block">
+        {renderHeroes()}
+      </div>
     </div>
   );
 }

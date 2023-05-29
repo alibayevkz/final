@@ -34,7 +34,7 @@ export default function HeroDetails() {
   if (!hero) return null;
 
   const handleGoBack = () => {
-    navigate(-1); // Go back one step in the history stack
+    navigate(-2); // Go back one step in the history stack
   };
 
   return (
