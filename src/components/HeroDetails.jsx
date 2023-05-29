@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { fetchHero } from "../libs/utils";
 
 export default function HeroDetails() {
   let { id } = useParams();
+  const navigate = useNavigate();
 
   const [hero, setHero] = useState();
 
@@ -19,7 +20,7 @@ export default function HeroDetails() {
     fetchHero(id)
       .then((data) => setHero(data))
       .catch((err) => console.error(err));
-  }, []);
+  }, [id]);
 
   if (hero) {
     name = hero.data.results[0].name;
@@ -30,11 +31,16 @@ export default function HeroDetails() {
     series = hero.data.results[0].series.items;
   }
 
-  if (!hero) return;
+  if (!hero) return null;
+
+  const handleGoBack = () => {
+    navigate(-1); // Go back one step in the history stack
+  };
 
   return (
     <div className="container large">
       <div className="hero__details-container">
+        <button onClick={handleGoBack}>Back</button>
         <img src={thumbnailUrl} alt="hero image full size" />
         <div className="hero__details">
           <h4>Name</h4>

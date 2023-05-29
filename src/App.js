@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Navbar logo={<Logo text={"Marvel Heroes Finder"} />}>
         <NavItem to={"/"} text={"Home"} />
-        <NavItem to={"/about"} text={"About"} />
+        <NavItem to={"/about"} text={"Favourite Heroes"} />
       </Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
